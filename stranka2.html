@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+</head>
+<style>
+    body {
+        background-color: #f8f9fa;
+        padding: 20px;
+    }
+
+    .form-container {
+        max-width: 700px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="form-container">
+                    <h2 class="mb-4 text-center">Registrace uzivatele</h2>
+
+                    <form action="#" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="jmeno" name="jmeno" placeholder="Jan" required>
+                            <label for="jmeno">e-mail</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="prijmeni" name="prijmeni" placeholder="Novak"
+                                required>
+                            <label for="prijmeni">Prijmeni uzivatele</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="date" class="form-control" id="datumNarozeni" name="datum_narozeni"
+                                max="2026-01-01" required>
+                            <label for="datumNarozeni">Datum narozeni</label>
+                        </div>
+
+
+
+
+                        <div class="mb-3">
+                            <label for="fotka" class="form-label text-muted small ms-2">Fotka :D</label>
+                            <input class="form-control" type="file" id="fotka" name="fotka" accept="image/*" required>
+                        </div>
+
+                        <div class="mb-3 position-relative">
+                            <label for="jazyky" class="form-label text-muted small ms-2">Jazykové schopnosti</label>
+                            <select id="select-state" name="state[]" multiple placeholder="Select a state..."
+                                autocomplete="off" class="form-select">
+                                <option value="CZ">Čeština</option>
+                                <option value="EN">Angličtina</option>
+                                <option value="DE">Němčina</option>
+                                <option value="FR">Francouzština</option>
+                                <option value="ES">Španělština</option>
+                                <option value="RU">Ruština</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="motivace" class="form-label text-muted small ms-2">Motivace k registraci</label>
+                            <textarea id="motivace" name="motivace" placeholder="Napište svou motivaci..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 py-2">Odeslat registraci</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            let dlb2 = new DualListbox('.select2', {
+                availableTitle: 'Dostupné čísla',
+                selectedTitle: 'Vybrané čísla',
+                addButtonText: '>',
+                removeButtonText: '<',
+                addAllButtonText: '>>',
+                removeAllButtonText: '<<',
+                searchPlaceholder: 'Hledat čísla'
+            });
+            dlb2.addEventListener('added', function (event) {
+                console.log(event);
+            });
+            dlb2.addEventListener('removed', function (event) {
+                console.log(event);
+            });
+        </script>
+
+        <script>
+            let dlb1 = new DualListbox('.select1');
+        </script>
+
+        <script>
+
+            if (typeof tinymce !== 'undefined') {
+                tinymce.init({
+                    selector: '#motivace',
+                    height: 250,
+                    menubar: false,
+                    toolbar: 'undo redo | bold italic | alignleft aligncenter | numlist bullist outdent indent',
+                    branding: false
+                });
+            }
+
+
+            new TomSelect("#select-state", {
+                maxItems: 3,
+            });
+
+            (() => {
+                'use strict'
+                const forms = document.querySelectorAll('.needs-validation')
+                Array.from(forms).forEach(form => {
+                    form.addEventListener('submit', event => {
+
+
+                        if (typeof tinymce !== 'undefined') {
+                            tinymce.triggerSave();
+                        }
+
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+            })()
+        </script>
+
+        <body>
+
+        </body>
+
+</html>

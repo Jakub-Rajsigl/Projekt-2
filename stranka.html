@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Projekt Přehled</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><i class="fa-solid fa-code me-2"></i>WebProject</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="stranka.html">Domů</a></li>
+          <li class="nav-item"><a class="nav-link" href="stranka2.html">Registrace do kurzu</a></li>
+          <li class="nav-item"><a class="nav-link" href="stranka3.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-5">
+    <div id="projectCarousel" class="carousel slide mb-5 shadow rounded overflow-hidden" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2"></button>
+        <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://picsum.photos/1200/400?random=1" class="d-block w-100" alt="Slide 1">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+            <h5>Analýza požadavků</h5>
+            <p>Specifikace technologií a návrh rozhraní.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/1200/400?random=2" class="d-block w-100" alt="Slide 2">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+            <h5>Vývoj komponent</h5>
+            <p>Implementace knihoven NPM a Bootstrapu.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/1200/400?random=3" class="d-block w-100" alt="Slide 3">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+            <h5>Testování a validace</h5>
+            <p>Kontrola formulářů a responzivity.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/1200/400?random=4" class="d-block w-100" alt="Slide 4">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+            <h5>Nasazení na hosting</h5>
+            <p>Konfigurace FTP a nahrání dokumentace.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+
+    <div class="card mb-5 p-4 shadow-sm">
+      <h4 class="card-title mb-3"><i class="fa-solid fa-bars-progress me-2"></i>Postup vývoje projektu</h4>
+      <div class="progress" style="height: 25px;">
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar"
+          style="width: 40%;">
+          40 % Dokončeno
+        </div>
+      </div>
+      <small class="text-muted mt-2">Zbývá dokončit finální kontrolu odkazů a nahrání na hosting.</small>
+    </div>
+
+    <div class="card shadow-sm p-4">
+      <h4 class="card-title mb-3"><i class="fa-solid fa-table me-2"></i>Plánované milníky</h4>
+      <div class="table-responsive">
+        <table class="table table-striped table-hover table-bordered align-middle">
+          <thead class="table-dark">
+            <tr>
+              <th>#</th>
+              <th>Úkol</th>
+              <th>Odpovědná osoba</th>
+              <th>Stav</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Instalace závislostí přes NPM</td>
+              <td>Vývojář</td>
+              <td><span class="badge bg-success">Hotovo</span></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Vytvoření formulářů a validace</td>
+              <td>Vývojář</td>
+              <td><span class="badge bg-success">Hotovo</span></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Nasazení na server a export PDF</td>
+              <td>Správce</td>
+              <td><span class="badge bg-warning text-dark">V řešení</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-3 mt-auto">
+    <div class="container">
+      <p class="mb-1">Školní projekt Knihovny NPM</p>
+      <a href="dokumentace.pdf" target="_blank" class="text-info text-decoration-none">
+        <i class="fa-solid fa-file-pdf me-1"></i>Dokumentace k projektu (PDF)
+        <link rel="stylesheet" href="dokumentace.docx">
+      </a>
+    </div>
+  </footer>
+
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
